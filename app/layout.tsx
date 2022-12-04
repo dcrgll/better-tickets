@@ -1,13 +1,11 @@
 import './styles.css'
-import { AnalyticsWrapper } from './components/analytics'
+import useAnalytics from '../lib/splitbee'
 
 export default function Layout({ children }: { children: React.ReactNode }) {
+	useAnalytics()
 	return (
 		<html lang="en">
-			<body>
-				{children}
-				<AnalyticsWrapper />
-			</body>
+			<body>{children}</body>
 		</html>
 	)
 }
